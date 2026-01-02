@@ -2,37 +2,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Counter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
   html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;   /* 🔴 removes scroll bar */
+    overflow: hidden !important;
+    height: auto;
     font-family: Arial, sans-serif;
     background: white;
   }
 
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;      /* ✅ fixed small height for embed */
-  }
-
   .counter {
+    display: inline-block;
     font-size: 48px;
     font-weight: bold;
     color: #2E86C1;
+    line-height: 1;
+    padding: 10px;
   }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-  <div class="counter" id="counter">0+</div>
-</div>
+<div class="counter" id="counter">0+</div>
 
 <script>
   const endValue = 50;
@@ -54,4 +49,3 @@
 
 </body>
 </html>
-
