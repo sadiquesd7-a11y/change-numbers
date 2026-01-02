@@ -1,51 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
+  /* Force remove scrollbar in browser */
   html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden !important;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;   /* ✅ removes scrollbar */
     font-family: Arial, sans-serif;
     background: white;
   }
 
   .counter {
-    display: inline-block;
     font-size: 48px;
     font-weight: bold;
     color: #2E86C1;
+    text-align: center;
     line-height: 1;
     padding: 10px;
   }
 </style>
-</head>
-
-<body>
-
-<div class="counter" id="counter">0+</div>
-
-<script>
-  const endValue = 50;
-  let startValue = Math.floor(Math.random() * 30) + 5;
-  let current = startValue;
-
-  const counter = document.getElementById("counter");
-
-  const interval = setInterval(() => {
-    counter.textContent = current + "+";
-    current++;
-
-    if (current > endValue) {
-      counter.textContent = endValue + "+";
-      clearInterval(interval);
-    }
-  }, 60);
-</script>
-
-</body>
-</html>
