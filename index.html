@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Counter</title>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: white;
+  }
+
+  .counter {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2E86C1;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="counter" id="counter">0+</div>
+
+<script>
+  const endValue = 50;                 // final number
+  let startValue = Math.floor(Math.random() * 30) + 5; // random start (5–35)
+  let current = startValue;
+
+  const counter = document.getElementById("counter");
+
+  const interval = setInterval(() => {
+    counter.textContent = current + "+";
+    current++;
+
+    if (current > endValue) {
+      counter.textContent = endValue + "+";
+      clearInterval(interval);
+    }
+  }, 60); // speed (lower = faster)
+</script>
+
+</body>
+</html>
